@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 Prompts de IA para Professores</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --plan: #0e5c8a;
+    --plan-light: #e3f0f9;
+    --plan-mid: #b8d8ee;
+    --aval: #1a6b52;
+    --aval-light: #e0f2ea;
+    --aval-mid: #a8d9c8;
+    --eng: #8b5200;
+    --eng-light: #fdf0dc;
+    --eng-mid: #f5cc89;
+    --pers: #7a1d6e;
+    --pers-light: #f7e8f5;
+    --pers-mid: #dda8d7;
+    --dark: #111827;
+    --body: #374151;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --bg: #f9f8f5;
+    --white: #ffffff;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--body);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  /* ── HEADER ─────────────────────────────────── */
+  .hero {
+    background: #0b2d46;
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 2rem 3.5rem;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 30% 40%, #1a5c8a44, transparent),
+                radial-gradient(ellipse 50% 50% at 75% 70%, #1a6b5233, transparent);
+  }
+  .hero-inner { position: relative; max-width: 720px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #b3d4ec;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  .hero h1 span { color: #7ecfb0; }
+  .hero-desc {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.72);
+    max-width: 520px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Lora', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+  }
+  .stat-lbl {
+    font-size: 10px;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 4px;
+  }
+
+  /* ── LAYOUT ──────────────────────────────────── */
+  .container { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* ── HOW TO ──────────────────────────────────── */
+  .how-section {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 2.5rem 1.5rem;
+  }
+  .how-grid {
+    max-width: 880px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .how-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1rem;
+    text-align: center;
+  }
+  .how-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin: 0 auto 0.6rem;
+  }
+  .how-card h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--dark); }
+  .how-card p { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+  /* ── INTRO ───────────────────────────────────── */
+  .intro-section { padding: 3rem 1.5rem 2rem; }
+  .intro-box {
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 2rem 2.25rem;
+    border-left: 4px solid var(--plan);
+  }
+  .intro-box h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 0.8rem;
+  }
+  .intro-box p { font-size: 0.92rem; color: var(--body); line-height: 1.75; margin-bottom: 0.6rem; }
+  .intro-box p:last-child { margin-bottom: 0; }
+  .intro-box strong { font-weight: 600; color: var(--dark); }
+
+  /* ── TOC ─────────────────────────────────────── */
+  .toc-section { padding: 0 1.5rem 2.5rem; }
+  .toc-box {
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 2rem;
+  }
+  .toc-box h3 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+  }
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--dark);
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .toc-item:hover { background: var(--bg); }
+  .toc-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .toc-name { font-size: 0.85rem; font-weight: 500; flex: 1; }
+  .toc-count {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  /* ── CATEGORY ────────────────────────────────── */
+  .category-section { padding: 0 1.5rem 3rem; }
+  .cat-header {
+    max-width: 880px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .cat-icon {
+    width: 48px; height: 48px;
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+  .cat-title h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--dark);
+  }
+  .cat-title p { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+
+  /* ── PROMPT CARDS ────────────────────────────── */
+  .prompts-list {
+    max-width: 880px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .prompt-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .prompt-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+
+  .prompt-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s;
+  }
+  .prompt-header:hover { background: #fafafa; }
+
+  .prompt-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .prompt-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    flex: 1;
+    color: var(--dark);
+    line-height: 1.3;
+  }
+  .prompt-chevron {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.25s, background 0.15s;
+    font-size: 9px;
+    color: var(--muted);
+  }
+  .prompt-card.open .prompt-chevron {
+    transform: rotate(180deg);
+    background: var(--border);
+  }
+
+  .prompt-body {
+    display: none;
+    padding: 0 1.25rem 1.25rem;
+    border-top: 1px solid var(--border);
+    animation: slideDown 0.22s ease;
+  }
+  .prompt-card.open .prompt-body { display: block; }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .prompt-text-box {
+    position: relative;
+    margin: 1rem 0 0.875rem;
+    background: #f8fbff;
+    border: 1px solid #c9dff0;
+    border-left: 3px solid var(--plan);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 0.9rem 3.5rem 0.9rem 1rem;
+  }
+  .prompt-text-box p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--dark);
+    font-style: italic;
+  }
+  .copy-btn {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .copy-btn:hover { background: var(--dark); color: #fff; border-color: var(--dark); }
+  .copy-btn.copied { background: #1a6b52; color: #fff; border-color: #1a6b52; }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 540px) { .meta-grid { grid-template-columns: 1fr; } }
+
+  .meta-block {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 0.9rem;
+  }
+  .meta-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    margin-bottom: 0.35rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .meta-text { font-size: 0.8rem; line-height: 1.6; color: var(--body); }
+
+  /* ── CONCLUSION ──────────────────────────────── */
+  .conclusion-section { padding: 0 1.5rem 4rem; }
+  .conclusion-box {
+    max-width: 880px;
+    margin: 0 auto;
+    background: #0b2d46;
+    border-radius: var(--radius);
+    padding: 3rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .conclusion-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 20% 50%, #1a5c8a33, transparent),
+                radial-gradient(ellipse 40% 40% at 80% 30%, #1a6b5222, transparent);
+  }
+  .conclusion-inner { position: relative; }
+  .conclusion-box h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  .conclusion-box p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.75;
+    max-width: 560px;
+    margin: 0 auto 0.75rem;
+  }
+  .cta-chip {
+    display: inline-block;
+    background: rgba(126, 207, 176, 0.2);
+    border: 1px solid rgba(126, 207, 176, 0.4);
+    color: #7ecfb0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 28px;
+    border-radius: 28px;
+    margin-top: 1.25rem;
+  }
+
+  /* ── SEARCH BAR ──────────────────────────────── */
+  .search-section {
+    padding: 2.5rem 1.5rem 0;
+  }
+  .search-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .search-wrap svg {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+  }
+  #searchInput {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    color: var(--dark);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  #searchInput:focus { border-color: var(--plan); }
+  #searchInput::placeholder { color: var(--muted); }
+  #searchCount {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: var(--muted);
+    pointer-events: none;
+  }
+  .no-results {
+    display: none;
+    text-align: center;
+    padding: 3rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  /* ── FILTER TABS ─────────────────────────────── */
+  .filter-section {
+    padding: 1rem 1.5rem 0;
+  }
+  .filter-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--body);
+    transition: all 0.15s;
+  }
+  .filter-btn:hover { border-color: #999; }
+  .filter-btn.active { color: #fff; border-color: transparent; }
+
+  /* ── FOOTER ──────────────────────────────────── */
+  .footer {
+    background: var(--dark);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ── COPY TOAST ──────────────────────────────── */
+  #toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--dark);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: all 0.25s;
+    pointer-events: none;
+    z-index: 1000;
+  }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ── SCROLLBAR ───────────────────────────────── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+
+  /* ── RESPONSIVE ──────────────────────────────── */
+  @media (max-width: 600px) {
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    .hero-stats { gap: 1.5rem; }
+    .intro-box, .toc-box { padding: 1.5rem 1.25rem; }
+    .conclusion-box { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Guia Prático para Educadores</div>
+    <h1>50 Prompts de IA para <span>Professores</span> Economizarem Tempo e Melhorarem suas Aulas</h1>
+    <p class="hero-desc">Ferramentas prontas para usar agora mesmo — sem precisar ser especialista em tecnologia.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">50</div><div class="stat-lbl">Prompts prontos</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-lbl">Categorias</div></div>
+      <div class="stat"><div class="stat-num">0</div><div class="stat-lbl">Conhecimento técnico</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- HOW TO -->
+<section class="how-section">
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-icon" style="background:#e3f0f9">📋</div>
+      <h4>1. Copie o prompt</h4>
+      <p>Use o botão "Copiar" em cada card para copiar o texto completo</p>
+    </div>
+    <div class="how-card">
+      <div class="how-icon" style="background:#e0f2ea">✏️</div>
+      <h4>2. Preencha os [ ]</h4>
+      <p>Substitua os colchetes pelo seu contexto real</p>
+    </div>
+    <div class="how-card">
+      <div class="how-icon" style="background:#fdf0dc">🤖</div>
+      <h4>3. Cole na IA</h4>
+      <p>Use ChatGPT, Claude, Gemini ou qualquer ferramenta</p>
+    </div>
+    <div class="how-card">
+      <div class="how-icon" style="background:#f7e8f5">🎯</div>
+      <h4>4. Revise e use</h4>
+      <p>Adapte o resultado ao seu contexto e à sua turma</p>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="intro-box">
+    <h2>Por que usar IA na sua rotina docente?</h2>
+    <p>Você já passou horas preparando uma prova, escrevendo planos de aula ou tentando criar atividades diferentes para cada turma? A Inteligência Artificial chegou para ser a sua assistente — aquela que não se cansa, trabalha a qualquer hora e nunca julga o quanto você tem para fazer.</p>
+    <p>Ferramentas como o ChatGPT, Gemini e o Claude podem gerar materiais, sugerir atividades, criar questões e até ajudar a comunicar-se com famílias — tudo em segundos. Você dá o comando (o "prompt") e a IA faz o rascunho. Você revisa, adapta ao seu contexto e usa.</p>
+    <p><strong>Neste guia, cada prompt já está escrito para você.</strong> Basta clicar em "Copiar", colar na ferramenta de IA de sua preferência e adaptar onde indicado com colchetes [ ].</p>
+  </div>
+</section>
+
+<!-- SEARCH + FILTER -->
+<section class="search-section">
+  <div class="search-wrap">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M11 11L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <input type="text" id="searchInput" placeholder="Pesquisar prompt por palavra-chave...">
+    <span id="searchCount"></span>
+  </div>
+</section>
+<section class="filter-section">
+  <div class="filter-wrap">
+    <button class="filter-btn active" data-filter="all" style="background:#111827" onclick="setFilter('all',this)">Todos (50)</button>
+    <button class="filter-btn" data-filter="planejamento" onclick="setFilter('planejamento',this)">📚 Planejamento</button>
+    <button class="filter-btn" data-filter="avaliacao" onclick="setFilter('avaliacao',this)">📝 Avaliação</button>
+    <button class="filter-btn" data-filter="engajamento" onclick="setFilter('engajamento',this)">🎯 Engajamento</button>
+    <button class="filter-btn" data-filter="personalizacao" onclick="setFilter('personalizacao',this)">🌟 Personalização</button>
+  </div>
+</section>
+
+<!-- TOC -->
+<section class="toc-section" style="padding-top:2rem">
+  <div class="toc-box">
+    <h3>Navegação rápida</h3>
+    <div class="toc-grid">
+      <a class="toc-item" href="#planejamento">
+        <div class="toc-dot" style="background:#0e5c8a"></div>
+        <span class="toc-name">Planejamento de Aulas</span>
+        <span class="toc-count" style="background:#e3f0f9;color:#0e5c8a">15</span>
+      </a>
+      <a class="toc-item" href="#avaliacao">
+        <div class="toc-dot" style="background:#1a6b52"></div>
+        <span class="toc-name">Avaliação e Feedback</span>
+        <span class="toc-count" style="background:#e0f2ea;color:#1a6b52">13</span>
+      </a>
+      <a class="toc-item" href="#engajamento">
+        <div class="toc-dot" style="background:#8b5200"></div>
+        <span class="toc-name">Engajamento e Motivação</span>
+        <span class="toc-count" style="background:#fdf0dc;color:#8b5200">12</span>
+      </a>
+      <a class="toc-item" href="#personalizacao">
+        <div class="toc-dot" style="background:#7a1d6e"></div>
+        <span class="toc-name">Personalização e Inclusão</span>
+        <span class="toc-count" style="background:#f7e8f5;color:#7a1d6e">10</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div id="no-results" class="no-results">Nenhum prompt encontrado para essa pesquisa. Tente outras palavras-chave.</div>
+
+<!-- ─────────────── CATEGORIA 1: PLANEJAMENTO ─────────────── -->
+<section class="category-section" id="planejamento" data-cat="planejamento">
+  <div class="cat-header">
+    <div class="cat-icon" style="background:#e3f0f9">📚</div>
+    <div class="cat-title">
+      <h2>Planejamento de Aulas</h2>
+      <p>15 prompts para montar aulas, sequências e materiais em minutos</p>
+    </div>
+  </div>
+  <div class="prompts-list" id="list-planejamento"></div>
+</section>
+
+<!-- ─────────────── CATEGORIA 2: AVALIAÇÃO ─────────────── -->
+<section class="category-section" id="avaliacao" data-cat="avaliacao">
+  <div class="cat-header">
+    <div class="cat-icon" style="background:#e0f2ea">📝</div>
+    <div class="cat-title">
+      <h2>Avaliação e Feedback</h2>
+      <p>13 prompts para criar provas, rubricas e devolutivas com mais eficiência</p>
+    </div>
+  </div>
+  <div class="prompts-list" id="list-avaliacao"></div>
+</section>
+
+<!-- ─────────────── CATEGORIA 3: ENGAJAMENTO ─────────────── -->
+<section class="category-section" id="engajamento" data-cat="engajamento">
+  <div class="cat-header">
+    <div class="cat-icon" style="background:#fdf0dc">🎯</div>
+    <div class="cat-title">
+      <h2>Engajamento e Motivação</h2>
+      <p>12 prompts para tornar suas aulas mais dinâmicas e participativas</p>
+    </div>
+  </div>
+  <div class="prompts-list" id="list-engajamento"></div>
+</section>
+
+<!-- ─────────────── CATEGORIA 4: PERSONALIZAÇÃO ─────────────── -->
+<section class="category-section" id="personalizacao" data-cat="personalizacao">
+  <div class="cat-header">
+    <div class="cat-icon" style="background:#f7e8f5">🌟</div>
+    <div class="cat-title">
+      <h2>Personalização e Inclusão</h2>
+      <p>10 prompts para atender diferentes perfis de aluno com mais cuidado</p>
+    </div>
+  </div>
+  <div class="prompts-list" id="list-personalizacao"></div>
+</section>
+
+<!-- CONCLUSION -->
+<section class="conclusion-section">
+  <div class="conclusion-box">
+    <div class="conclusion-inner">
+      <h2>Agora é a sua vez!</h2>
+      <p>Você não precisa usar os 50 prompts de uma vez. Comece pelo que mais dói na sua rotina — aquela tarefa que toma mais tempo e energia. Escolha um prompt, teste hoje mesmo, e veja o quanto a IA pode ser sua parceira na educação.</p>
+      <p>Lembre-se: a IA faz o rascunho. Você traz a humanidade, o vínculo com os alunos e a inteligência pedagógica. Juntos, vocês são imbatíveis.</p>
+      <div class="cta-chip">Comece com 1 prompt hoje. Só 1. ✓</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  50 Prompts de IA para Professores · Material gratuito para uso educacional
+</footer>
+
+<div id="toast">✓ Prompt copiado!</div>
+
+<script>
+const prompts = [
+  // ── PLANEJAMENTO ──
+  { cat: 'planejamento', n: 1, color: '#0e5c8a', title: 'Plano de aula completo',
+    prompt: 'Crie um plano de aula sobre [TEMA] para alunos do [ANO/SÉRIE] do [Ensino Fundamental/Médio]. A aula deve durar [X] minutos. Inclua: objetivo de aprendizagem, materiais necessários, desenvolvimento da aula em etapas (introdução, desenvolvimento e fechamento) e uma sugestão de avaliação.',
+    quando: 'Sempre que você precisar estruturar uma aula nova do zero ou revisar uma já existente.',
+    exemplo: 'Professora de Ciências do 7º ano precisava preparar aula sobre fotossíntese para segunda-feira. Em 30 segundos, tinha um plano completo com dinâmica, perguntas disparadoras e proposta de avaliação.' },
+  { cat: 'planejamento', n: 2, color: '#0e5c8a', title: 'Sequência didática de 5 aulas',
+    prompt: 'Monte uma sequência didática de 5 aulas sobre [TEMA] para turmas do [ANO]. Cada aula deve ter objetivo específico, atividade principal e forma de verificar o aprendizado ao final. O foco é [habilidade da BNCC ou objetivo pedagógico].',
+    quando: 'No início de uma unidade temática, para ter toda a sequência planejada de uma vez.',
+    exemplo: 'Professor de História usou para planejar a unidade sobre Revolução Industrial, gerando 5 aulas conectadas com progressão de dificuldade clara.' },
+  { cat: 'planejamento', n: 3, color: '#0e5c8a', title: 'Objetivos de aprendizagem claros',
+    prompt: 'Reescreva este objetivo de aula usando verbos de ação claros e mensuráveis no formato "O aluno será capaz de...": [COLE SEU OBJETIVO ATUAL AQUI]. Sugira 3 versões com diferentes níveis de complexidade.',
+    quando: 'Quando você escreve objetivos muito vagos como "compreender" ou "conhecer" e quer objetivos observáveis.',
+    exemplo: 'A ferramenta transformou "conhecer os tipos de texto" em três objetivos observáveis para diferentes níveis da turma.' },
+  { cat: 'planejamento', n: 4, color: '#0e5c8a', title: 'Lista de materiais e recursos',
+    prompt: 'Para uma aula sobre [TEMA] com [X] alunos do [ANO], sugira: materiais físicos necessários, recursos digitais gratuitos disponíveis online, possíveis adaptações para fazer com poucos recursos e uma alternativa para aula sem internet.',
+    quando: 'Ao planejar aulas que precisam de materiais específicos ou quando os recursos são limitados.',
+    exemplo: 'Professora de escola pública usou para adaptar atividade de maquete sobre solo — a IA sugeriu materiais recicláveis que as crianças podiam trazer de casa.' },
+  { cat: 'planejamento', n: 5, color: '#0e5c8a', title: 'Perguntas disparadoras',
+    prompt: 'Crie 8 perguntas disparadoras para iniciar uma discussão com alunos do [ANO] sobre [TEMA]. As perguntas devem: estimular o pensamento crítico, conectar o tema à vida dos alunos e ter diferentes níveis de complexidade (2 simples, 3 médias, 3 desafiadoras).',
+    quando: 'Para abrir uma aula ou unidade nova e ativar o conhecimento prévio dos alunos.',
+    exemplo: 'Professor de Filosofia usou para introduzir ética. A pergunta "Você faria algo errado se tivesse certeza que nunca seria descoberto?" gerou debate de 40 minutos.' },
+  { cat: 'planejamento', n: 6, color: '#0e5c8a', title: 'Atividade prática e mão na massa',
+    prompt: 'Sugira uma atividade prática (hands-on) para ensinar [CONTEÚDO] a alunos do [ANO]. A atividade deve: poder ser feita em [X] minutos, usar materiais simples, envolver trabalho em grupo e ter um produto final que os alunos possam apresentar ou guardar.',
+    quando: 'Quando quiser sair do modelo expositivo e criar experiências de aprendizagem mais ativas.',
+    exemplo: 'Professora de Matemática criou atividade de medição e proporção usando fita métrica e o pátio da escola — saindo das questões do livro.' },
+  { cat: 'planejamento', n: 7, color: '#0e5c8a', title: 'Adaptação de texto para a faixa etária',
+    prompt: 'Adapte este texto para que fique adequado para alunos do [ANO]. Simplifique o vocabulário técnico, use exemplos do cotidiano de crianças/adolescentes e mantenha as informações essenciais. Texto original: [COLE O TEXTO AQUI].',
+    quando: 'Quando você encontra um artigo ou material excelente, mas o nível de linguagem está acima da turma.',
+    exemplo: 'Professora de Ciências adaptou artigo científico sobre dengue para o 5º ano. A IA manteve os dados importantes e criou analogias com o bairro dos alunos.' },
+  { cat: 'planejamento', n: 8, color: '#0e5c8a', title: 'Texto de apresentação do tema',
+    prompt: 'Escreva um texto de introdução ao tema [ASSUNTO] para ser lido ou apresentado no início da aula para alunos do [ANO]. O texto deve: ter no máximo [X] linhas, despertar curiosidade, apresentar uma pergunta sem resposta para motivar e usar linguagem [formal/informal/conversacional].',
+    quando: 'Para criar um "gancho" que capture a atenção dos alunos nos primeiros minutos da aula.',
+    exemplo: 'Professor de Biologia criou um texto misterioso sobre um vírus desconhecido antes de revelar que a aula seria sobre bactérias. Os alunos ficaram curiosos antes de ele abrir o livro.' },
+  { cat: 'planejamento', n: 9, color: '#0e5c8a', title: 'Conexão interdisciplinar',
+    prompt: 'Como posso conectar o conteúdo de [DISCIPLINA] sobre [TEMA] com as disciplinas de [DISCIPLINAS]? Sugira pelo menos 3 projetos ou atividades interdisciplinares que poderiam ser realizados juntos, com possíveis pontos de convergência nos currículos.',
+    quando: 'Ao planejar projetos integradores ou preparar semanas temáticas da escola.',
+    exemplo: 'Coordenadora usou para planejar semana da sustentabilidade integrando Ciências, Geografia, Português e Matemática em torno do tema "água".' },
+  { cat: 'planejamento', n: 10, color: '#0e5c8a', title: 'Exercícios graduados por nível',
+    prompt: 'Crie 15 exercícios sobre [CONTEÚDO] para o [ANO]. Organize em 3 grupos: 5 básicos (memorização e reconhecimento), 5 intermediários (aplicação e análise) e 5 avançados (criação e avaliação crítica). Cada exercício deve ter enunciado claro.',
+    quando: 'Para montar listas de exercícios que atendam diferentes ritmos de aprendizagem na mesma turma.',
+    exemplo: 'Professora de Matemática criou lista de frações com três níveis. Alunos avançados não ficavam ociosos e os que precisavam de apoio não se sentiam sobrecarregados.' },
+  { cat: 'planejamento', n: 11, color: '#0e5c8a', title: 'Plano para aula de revisão',
+    prompt: 'Crie um plano de aula de revisão sobre [LISTA DE TÓPICOS] para o [ANO], com duração de [X] minutos. Use uma metodologia ativa (não apenas expositiva). Inclua: dinâmica de revisão em grupo, forma de identificar lacunas de aprendizagem e sugestão de fechamento motivador.',
+    quando: 'Antes de provas ou ao finalizar uma unidade, para consolidar o aprendizado de forma dinâmica.',
+    exemplo: 'Professor usou para criar "gincana de revisão" sobre o corpo humano — os próprios alunos criaram perguntas uns para os outros com base no roteiro da IA.' },
+  { cat: 'planejamento', n: 12, color: '#0e5c8a', title: 'Resumo do conteúdo em tópicos',
+    prompt: 'Faça um resumo do conteúdo de [TEMA] para alunos do [ANO], em tópicos claros. Para cada tópico, inclua: definição em linguagem simples, um exemplo prático do cotidiano e um ponto de atenção (erro comum ou conceito que confunde). Limite a [X] páginas.',
+    quando: 'Para criar material de apoio para estudo ou como referência durante as aulas.',
+    exemplo: 'Professora de Química criou resumo de tabela periódica com exemplos de elementos encontrados em casa (ferro da frigideira, alumínio da panela).' },
+  { cat: 'planejamento', n: 13, color: '#0e5c8a', title: 'Cronograma do bimestre',
+    prompt: 'Ajude-me a distribuir os seguintes conteúdos ao longo de [X] semanas do bimestre: [LISTE OS CONTEÚDOS]. Considere: iniciar por conteúdos base, reservar semana de revisão antes da avaliação e deixar margem para imprevistos. Apresente em formato de tabela semanal.',
+    quando: 'No início de cada bimestre, para ter uma visão geral do período e não se perder.',
+    exemplo: 'Professora de Português organizou todo o bimestre — incluindo semana de projeto literário e revisão antes da prova — sem se preocupar com o planejamento semana a semana.' },
+  { cat: 'planejamento', n: 14, color: '#0e5c8a', title: 'Dever de casa significativo',
+    prompt: 'Sugira 5 opções de dever de casa sobre [CONTEÚDO] para alunos do [ANO]. Cada opção deve: poder ser feita sem internet (ou com uso opcional), levar no máximo [X] minutos, ter conexão com a vida real e NÃO ser apenas repetição de exercícios da aula.',
+    quando: 'Quando quiser propor deveres que os alunos realmente façam e que reforcem o aprendizado de forma significativa.',
+    exemplo: 'Professora de Matemática propôs que alunos calculassem o consumo de energia elétrica de casa por uma semana — eles voltaram animados com os dados coletados.' },
+  { cat: 'planejamento', n: 15, color: '#0e5c8a', title: 'Roteiro de aula expositiva dialogada',
+    prompt: 'Crie um roteiro para aula expositiva dialogada sobre [TEMA] para o [ANO], com duração de [X] minutos. Inclua: 3 momentos de pausa para perguntas à turma, 2 situações-problema para resolver juntos, transições entre os blocos e sugestão de encerramento. Formato: script com minhas falas e perguntas à turma marcadas.',
+    quando: 'Para preparar aulas expositivas que não sejam monólogos — mantendo os alunos ativos durante a explicação.',
+    exemplo: 'Professora de História preparou aula sobre ditadura militar com roteiro que incluía perguntas provocativas a cada 10 minutos — alunos mantiveram atenção durante toda a aula.' },
+
+  // ── AVALIAÇÃO ──
+  { cat: 'avaliacao', n: 16, color: '#1a6b52', title: 'Prova com gabarito',
+    prompt: 'Crie uma prova sobre [CONTEÚDO] para alunos do [ANO], com [X] questões: [X] de múltipla escolha, [X] de verdadeiro ou falso e [X] dissertativas. Cada questão deve ter: enunciado claro, nível de dificuldade indicado e, ao final, o gabarito comentado.',
+    quando: 'Ao preparar avaliações formais, economizando horas de elaboração de questões.',
+    exemplo: 'Professor de Biologia gerou prova de 20 questões sobre ecossistemas em 3 minutos — apenas revisou e ajustou 2 questões ao contexto da turma.' },
+  { cat: 'avaliacao', n: 17, color: '#1a6b52', title: 'Rubrica de avaliação',
+    prompt: 'Crie uma rubrica de avaliação para [TIPO DE TRABALHO, ex: redação, apresentação, projeto] sobre [TEMA]. Inclua 4 critérios de avaliação, cada um com 4 níveis de desempenho (insuficiente, básico, adequado e avançado). Descreva em linguagem clara o que se espera em cada nível.',
+    quando: 'Para tornar a avaliação mais transparente e justa, e facilitar o feedback ao aluno.',
+    exemplo: 'Professora de Língua Portuguesa usou para avaliar seminários. Alunos receberam a rubrica antes e souberam exatamente o que seria avaliado — a qualidade das apresentações melhorou muito.' },
+  { cat: 'avaliacao', n: 18, color: '#1a6b52', title: 'Feedback escrito personalizado',
+    prompt: 'Preciso escrever feedback para um aluno sobre [TRABALHO/PROVA]. As observações que tenho são: [SUAS NOTAS SOBRE O DESEMPENHO]. Escreva um parágrafo de feedback que: reconheça os pontos fortes, aponte o principal ponto de melhoria, seja encorajador e sugira uma ação concreta para o aluno melhorar.',
+    quando: 'Para escrever devolutivas individuais sem gastar horas compondo cada texto do zero.',
+    exemplo: 'Professora de Redação usava 2h para escrever feedback de 30 redações. Com a IA, revisava e personalizava sugestões em 40 minutos.' },
+  { cat: 'avaliacao', n: 19, color: '#1a6b52', title: 'Questões com distratores eficazes',
+    prompt: 'Crie 10 questões de múltipla escolha sobre [CONTEÚDO] para o [ANO]. Cada questão deve ter: 1 resposta correta e 3 alternativas incorretas (distratores) que representem erros comuns dos alunos. Inclua a justificativa de por que cada distrator está errado.',
+    quando: 'Para criar simulados e provas com alternativas que realmente testam a compreensão, não apenas o chute.',
+    exemplo: 'Professor de Matemática criou simulado com distratores que representavam os erros mais comuns de cálculo — os alunos reconheceram seus próprios erros nas revisões.' },
+  { cat: 'avaliacao', n: 20, color: '#1a6b52', title: 'Comentários de boletim',
+    prompt: 'Escreva 5 modelos de comentários para boletim escolar que descrevam diferentes perfis de desempenho: 1 aluno com excelente desempenho, 1 que progrediu bastante, 1 com desempenho regular, 1 com dificuldades mas esforçado e 1 que precisa de atenção. Cada comentário deve ter 3-4 linhas, ser construtivo e mencionar próximos passos.',
+    quando: 'No período de boletins, para ter uma base que você adapta para cada aluno em vez de começar do zero.',
+    exemplo: 'Vice-diretora usou os modelos como base. Cada professora adaptava 2-3 palavras para personalizar — o que levava 3 horas virou trabalho de 45 minutos.' },
+  { cat: 'avaliacao', n: 21, color: '#1a6b52', title: 'Autoavaliação do aluno',
+    prompt: 'Crie um formulário de autoavaliação para alunos do [ANO] sobre [UNIDADE/PROJETO]. Deve ter: 5 afirmações para o aluno marcar (concordo totalmente / concordo / discordo), 2 perguntas abertas sobre o que aprendeu e o que mudaria e uma seção onde o aluno define sua nota e justifica.',
+    quando: 'Para desenvolver a metacognição dos alunos e ter uma perspectiva deles sobre o próprio aprendizado.',
+    exemplo: 'Professora de Artes usou a autoavaliação após projeto de mural. Descobriu que aluno que tirou nota baixa havia se dedicado muito — a conversa mudou a relação com ele.' },
+  { cat: 'avaliacao', n: 22, color: '#1a6b52', title: 'Análise de desempenho da turma',
+    prompt: 'Minha turma do [ANO] teve o seguinte desempenho na prova de [DISCIPLINA]: [DESCREVA OS RESULTADOS]. Com base nisso, sugira: diagnóstico das lacunas, 3 estratégias de intervenção e como organizar os próximos encontros.',
+    quando: 'Após aplicar uma avaliação, para transformar os dados em ação pedagógica.',
+    exemplo: 'Coordenadora usou com resultados de diagnóstico inicial. A IA identificou padrão de dificuldade em interpretação de texto e sugeriu projeto de leitura transversal.' },
+  { cat: 'avaliacao', n: 23, color: '#1a6b52', title: 'Recuperação paralela personalizada',
+    prompt: 'Um aluno do [ANO] demonstrou dificuldade específica em [CONTEÚDO]. Crie um plano de recuperação paralela com: atividades para retomar o conceito do zero, progressão em 3 etapas (do básico ao esperado), material de leitura simples e uma avaliação final para verificar a superação da dificuldade.',
+    quando: 'Para estruturar recuperação individualizada sem precisar criar do zero para cada aluno.',
+    exemplo: 'Professora de Matemática criou plano de recuperação em fração para 4 alunos — cada um com roteiro próprio gerado em menos de 5 minutos cada.' },
+  { cat: 'avaliacao', n: 24, color: '#1a6b52', title: 'Questões estilo ENEM/vestibular',
+    prompt: 'Crie 5 questões no estilo ENEM/vestibular sobre [CONTEÚDO] para alunos do [ANO do EM]. Cada questão deve ter: contexto introdutório (texto, gráfico ou situação), enunciado claro e 5 alternativas. Inclua gabarito e explicação de cada alternativa.',
+    quando: 'Para preparar alunos do Ensino Médio com o formato de questões que encontrarão em vestibulares.',
+    exemplo: 'Professor de Química criou questões contextualizadas sobre reações químicas no cotidiano — utilizando embalagens de alimento como contexto, igual ao ENEM.' },
+  { cat: 'avaliacao', n: 25, color: '#1a6b52', title: 'Checklist de avaliação de projeto',
+    prompt: 'Crie um checklist para avaliação do projeto [DESCREVA O PROJETO] dos alunos do [ANO]. O checklist deve ter: itens obrigatórios (conteúdo, formato, prazo), critérios de qualidade com indicadores claros e espaço para comentários. Versão para o professor e versão simplificada para o aluno acompanhar.',
+    quando: 'Para avaliar projetos de forma sistemática e comunicar expectativas antes do início.',
+    exemplo: 'Professora de Ciências distribuiu o checklist no início do projeto de feira científica. Grupos sabiam exatamente o que seria avaliado e entregaram trabalhos muito mais completos.' },
+  { cat: 'avaliacao', n: 26, color: '#1a6b52', title: 'Roteiro de conversa sobre desempenho',
+    prompt: 'Crie 8 perguntas para uma conversa de 10 minutos com um aluno sobre seu desempenho escolar. As perguntas devem: começar com pontos positivos, explorar dificuldades sem julgamento, investigar fatores externos que podem influenciar e terminar com um plano de ação conjunto. Tom: acolhedor e respeitoso.',
+    quando: 'Para conduzir conversas individuais com alunos que precisam de atenção especial ou ao fazer acompanhamento.',
+    exemplo: 'Orientadora usou o roteiro para conversa com adolescente com muitas faltas. Descobriu problema em casa que a escola não sabia — a conversa abriu caminho para apoio real.' },
+  { cat: 'avaliacao', n: 27, color: '#1a6b52', title: 'Análise de redação com critérios ENEM',
+    prompt: 'Analise a redação abaixo segundo os critérios do ENEM (competências I a V). Para cada competência, dê: nota de 0 a 200, justificativa objetiva, 1 ponto forte e 1 sugestão de melhoria. Ao final, calcule a média e escreva um comentário geral encorajador. Redação: [COLE O TEXTO AQUI].',
+    quando: 'Para dar feedback detalhado em redações sem passar horas escrevendo comentários à mão.',
+    exemplo: 'Professora de Português corrigia 35 redações por turma. Com a IA fazendo a análise inicial, o tempo caiu de 4h para 1h30.' },
+  { cat: 'avaliacao', n: 28, color: '#1a6b52', title: 'Relatório de acompanhamento do aluno',
+    prompt: 'Escreva um relatório de acompanhamento pedagógico para o aluno. Perfil: [DESCREVA O ALUNO: comportamento, desempenho, pontos fortes, dificuldades, contexto]. O relatório deve ter: 1 parágrafo descritivo, análise dos pontos de desenvolvimento, encaminhamentos sugeridos e linguagem adequada para reunião com família.',
+    quando: 'Para preparar relatórios individuais para reunião com pais ou encaminhamento para apoio especializado.',
+    exemplo: 'Professora de Educação Especial usou para elaborar relatórios semestrais de 8 alunos com NEE — o que levava um dia inteiro foi feito em 2 horas com muito mais qualidade.' },
+
+  // ── ENGAJAMENTO ──
+  { cat: 'engajamento', n: 29, color: '#8b5200', title: 'Dinâmica de aquecimento',
+    prompt: 'Sugira 5 dinâmicas de aquecimento (5-10 minutos) para iniciar uma aula de [DISCIPLINA] com alunos do [ANO]. As dinâmicas devem: não precisar de materiais elaborados, ativar o pensamento sobre o tema do dia, ter alguma movimentação ou interação entre os alunos e poder ser feitas em qualquer espaço de sala de aula.',
+    quando: 'Para quebrar a rotina e criar um clima favorável ao aprendizado nos primeiros minutos da aula.',
+    exemplo: 'Professora de Matemática começou aula de probabilidade com dinâmica de cara ou coroa em duplas — os alunos já chegaram ao conteúdo com experiência concreta.' },
+  { cat: 'engajamento', n: 30, color: '#8b5200', title: 'Quiz e jogo de revisão',
+    prompt: 'Crie um quiz de 15 perguntas sobre [CONTEÚDO] para revisar com a turma do [ANO]. Formato: perguntas curtas com resposta objetiva, nível crescente de dificuldade (5 fáceis, 5 médias, 5 difíceis). Pode ser usado no estilo "Quem quer ser milionário" ou Kahoot. Inclua gabarito.',
+    quando: 'Para tornar a revisão antes de provas mais animada e participativa.',
+    exemplo: 'Professor de Geografia criou quiz sobre biomas. Usou no Kahoot e os alunos pediram para repetir a atividade na próxima semana com outros temas.' },
+  { cat: 'engajamento', n: 31, color: '#8b5200', title: 'Debate estruturado',
+    prompt: 'Organize um debate estruturado sobre [TEMA POLÊMICO ou DILEMA] para alunos do [ANO]. Inclua: contextualização do tema (3 parágrafos), argumentos para o lado A e lado B (3 argumentos cada), regras do debate, papéis dos participantes e forma de avaliação da participação.',
+    quando: 'Para trabalhar argumentação, oralidade e pensamento crítico de forma engajadora.',
+    exemplo: 'Professora de Filosofia organizou debate sobre ética nas redes sociais. Alunos estudaram com muito mais interesse porque queriam vencer o debate.' },
+  { cat: 'engajamento', n: 32, color: '#8b5200', title: 'Storytelling do conteúdo',
+    prompt: 'Transforme o conteúdo sobre [TEMA] em uma história ou narrativa envolvente para alunos do [ANO]. A história deve: ter um personagem que enfrenta um problema relacionado ao conteúdo, apresentar o conceito como solução ou parte da jornada, ser curta (5-7 parágrafos) e terminar com uma pergunta que conecta à aula.',
+    quando: 'Para apresentar conteúdos áridos de forma memorável, especialmente para alunos mais jovens.',
+    exemplo: 'Professor de Física criou história de um jovem inventor que precisava entender lei dos gases para salvar seu balão. Alunos lembravam da história na prova.' },
+  { cat: 'engajamento', n: 33, color: '#8b5200', title: 'Projeto criativo e maker',
+    prompt: 'Sugira um projeto criativo (maker, artístico ou de comunicação) que possa ser feito em [X] aulas para ensinar [CONTEÚDO] ao [ANO]. O projeto deve: ter um produto final concreto (objeto, vídeo, podcast, cartaz, etc.), ser possível com materiais simples e conectar o conteúdo à realidade dos alunos.',
+    quando: 'Para criar experiências de aprendizagem significativas e diferenciadas que fujam do modelo tradicional.',
+    exemplo: 'Professora de Ciências criou projeto "jornal científico da escola" — alunos pesquisaram temas ambientais, escreveram artigos e fizeram edição física do jornal.' },
+  { cat: 'engajamento', n: 34, color: '#8b5200', title: 'Conexão com cultura pop',
+    prompt: 'Como posso usar [FILME/SÉRIE/MÚSICA/JOGO/MEME] para ensinar [CONTEÚDO] ao [ANO]? Sugira: conexões conceituais entre o conteúdo e a referência popular, 3 atividades que usem essa referência como ponto de partida e perguntas para mediar a discussão.',
+    quando: 'Para engajar turmas difíceis ou tornar conteúdos abstratos mais acessíveis usando referências que os alunos já amam.',
+    exemplo: 'Professor de Física usou cenas de "O Homem de Aço" para discutir inércia e forças — os fãs de super-heróis se tornaram os mais engajados da turma.' },
+  { cat: 'engajamento', n: 35, color: '#8b5200', title: 'Desafio ou missão da semana',
+    prompt: 'Crie um "desafio da semana" sobre [CONTEÚDO] para alunos do [ANO]. O desafio deve: poder ser feito em casa ou na escola, envolver descoberta ou investigação (não apenas responder perguntas), ter um registro que o aluno compartilha com a turma e ser divertido o suficiente para ser feito por vontade própria.',
+    quando: 'Para criar engajamento fora da aula e cultivar curiosidade pelo conteúdo.',
+    exemplo: 'Professora de Biologia lançou desafio "descubra 5 reações químicas na sua cozinha". Os relatos na segunda-feira viraram ponto de partida para a aula de química orgânica.' },
+  { cat: 'engajamento', n: 36, color: '#8b5200', title: 'Rotação por estações de aprendizagem',
+    prompt: 'Planeje uma aula com rotação por estações sobre [CONTEÚDO] para [X] alunos do [ANO], com duração de [X] minutos. Crie 4 estações: uma com leitura/texto, uma com atividade prática, uma digital (ou offline) e uma de discussão em grupo. Inclua as instruções de cada estação.',
+    quando: 'Para fugir da aula frontal e atender diferentes estilos de aprendizagem ao mesmo tempo.',
+    exemplo: 'Professora usou estações para trabalhar substantivos — grupos giravam a cada 12 minutos. Ela conseguiu observar cada aluno de perto enquanto a turma trabalhava de forma autônoma.' },
+  { cat: 'engajamento', n: 37, color: '#8b5200', title: 'Pesquisa de opinião com a turma',
+    prompt: 'Crie uma pesquisa de opinião curta (5 perguntas) que eu possa fazer com minha turma do [ANO] sobre [TEMA]. As perguntas devem: revelar o que os alunos já sabem ou pensam sobre o tema, incluir 1 pergunta aberta e poder ser respondida em papel ou formulário digital.',
+    quando: 'Para ativar conhecimentos prévios, mapear interesses da turma e usar os próprios dados como material de aula.',
+    exemplo: 'Professora de Português fez pesquisa sobre hábitos de leitura. Os dados viraram material para aula de gráficos E ponto de partida para projeto de clube do livro.' },
+  { cat: 'engajamento', n: 38, color: '#8b5200', title: 'Role-play e simulação',
+    prompt: 'Crie um role-play ou simulação para ensinar [CONTEÚDO] a alunos do [ANO]. Inclua: cenário e contexto (1 parágrafo), papéis dos participantes com suas características, missão de cada personagem, roteiro de condução pelo professor e perguntas para discussão ao final.',
+    quando: 'Para trabalhar empatia, tomada de decisão e aplicação de conteúdo em situações simuladas.',
+    exemplo: 'Professor de História simulou negociação de paz após guerra — alunos representavam países diferentes e precisavam conhecer bem o contexto histórico para negociar.' },
+  { cat: 'engajamento', n: 39, color: '#8b5200', title: 'Escrita com propósito real',
+    prompt: 'Crie uma proposta de atividade em que alunos do [ANO] escrevam uma [carta para o futuro/mensagem/diário de bordo] relacionada ao conteúdo de [DISCIPLINA] sobre [TEMA]. Inclua: instruções para os alunos, critérios de qualidade, exemplos de como conectar o conteúdo à proposta e forma de compartilhamento.',
+    quando: 'Para criar atividades de escrita com propósito real e conexão emocional com o conteúdo.',
+    exemplo: 'Professora de Ciências pediu que alunos escrevessem carta para filho futuro explicando as mudanças climáticas. Os textos foram os mais emocionantes do ano.' },
+  { cat: 'engajamento', n: 40, color: '#8b5200', title: 'Mapa mental colaborativo',
+    prompt: 'Crie um roteiro para construção colaborativa de mapa mental sobre [TEMA] com a turma do [ANO]. Inclua: passo a passo da atividade, conceitos centrais e ramos sugeridos para iniciar, como organizar a participação de todos e como usar o mapa depois (estudo, avaliação, apresentação).',
+    quando: 'Para síntese de conteúdo ao final de uma unidade, incentivando colaboração e visualização das conexões.',
+    exemplo: 'Professora de Ciências Sociais construiu com a turma um mapa sobre capitalismo. O mapa ficou exposto na sala durante o bimestre inteiro como referência visual.' },
+
+  // ── PERSONALIZAÇÃO ──
+  { cat: 'personalizacao', n: 41, color: '#7a1d6e', title: 'Adaptação para aluno com dislexia',
+    prompt: 'Adapte este texto/atividade para um aluno com dislexia do [ANO]: [COLE O MATERIAL]. Sugira: mudanças na formatação (fonte, espaçamento, cores), simplificações de linguagem sem perda de conteúdo, recursos alternativos (oral, visual, manipulável) e estratégias para o professor apoiar durante a atividade.',
+    quando: 'Ao preparar materiais para alunos com dificuldades de leitura e processamento fonológico.',
+    exemplo: 'Professora adaptou texto de história para aluno com dislexia — fonte maior, parágrafos curtos, palavras-chave destacadas e versão em áudio gravada pela própria professora.' },
+  { cat: 'personalizacao', n: 42, color: '#7a1d6e', title: 'Material para aluno com TDAH',
+    prompt: 'Adapte esta atividade para um aluno com TDAH do [ANO]: [DESCREVA A ATIVIDADE]. Considere: quebrar em etapas menores com instruções curtas, incluir elementos visuais de organização, sugerir pausas e movimentos, propor variações para manter o engajamento e estratégias para apoiar sem constrangimento.',
+    quando: 'Para criar versões de atividades que respeitem as necessidades de foco e organização de alunos com TDAH.',
+    exemplo: 'Professor criou versão da prova em "missões" de 5 questões cada, com check box para o aluno marcar ao terminar. Aluno com TDAH terminou a prova pela primeira vez no ano.' },
+  { cat: 'personalizacao', n: 43, color: '#7a1d6e', title: 'Comunicado acolhedor para família',
+    prompt: 'Escreva um comunicado para a família sobre [SITUAÇÃO: dificuldade acadêmica, comportamento, conquista, convocação para reunião]. O comunicado deve: ser respeitoso e acolhedor, apresentar fatos sem julgamento, deixar claro o que a escola espera/precisa e como os pais podem ajudar. Extensão: 1 parágrafo.',
+    quando: 'Para comunicar situações delicadas com profissionalismo e clareza, sem soar acusatório.',
+    exemplo: 'Professora usou para comunicar à família de aluno com muitas faltas. O tom acolhedor que a IA sugeriu levou a mãe a responder e explicar o contexto de saúde.' },
+  { cat: 'personalizacao', n: 44, color: '#7a1d6e', title: 'Enriquecimento para aluno avançado',
+    prompt: 'Aluno do [ANO] demonstra domínio acima do esperado em [CONTEÚDO]. Crie 3 atividades de enriquecimento (não apenas "mais do mesmo") que: aprofundem o tema, conectem com áreas de interesse do estudante avançado, estimulem criatividade e pesquisa autônoma e possam ser feitas de forma independente.',
+    quando: 'Para desafiar alunos que já dominam o conteúdo e evitar que fiquem ociosos ou entediados.',
+    exemplo: 'Professora de Matemática criou desafios de criptografia para aluno que dominava aritmética básica. Ele se apaixonou pelo tema e fez apresentação voluntária para a turma.' },
+  { cat: 'personalizacao', n: 45, color: '#7a1d6e', title: 'Atividade em diferentes formatos',
+    prompt: 'Transforme esta atividade [DESCREVA] em 3 formatos diferentes para o [ANO]: 1) formato visual (infográfico, mapa, desenho anotado), 2) formato oral/apresentação e 3) formato prático/maker. Cada versão deve avaliar o mesmo conteúdo por caminhos diferentes, respeitando diferentes formas de expressão.',
+    quando: 'Para oferecer ao aluno diferentes formas de demonstrar o que aprendeu, respeitando diferentes habilidades.',
+    exemplo: 'Professora ofereceu 3 formatos para avaliação sobre Primeira Guerra. Um aluno que nunca se destacou criou infográfico impressionante — revelou conhecimento que a prova escrita nunca teria mostrado.' },
+  { cat: 'personalizacao', n: 46, color: '#7a1d6e', title: 'Aprendizagem por interesse do aluno',
+    prompt: 'Preciso engajar um aluno do [ANO] que tem interesse em [HOBBY/INTERESSE DO ALUNO] mas apresenta dificuldade em [DISCIPLINA/CONTEÚDO]. Como posso conectar o interesse dele ao conteúdo? Sugira: 3 atividades que usem o interesse como ponto de entrada, recursos relacionados ao tema e como fazer essa conexão de forma natural.',
+    quando: 'Para reconectar alunos desmotivados usando aquilo que eles amam como ponte para o currículo.',
+    exemplo: 'Professor usou interesse de aluno em games para ensinar probabilidade e estatística — criando atividades baseadas em mecânicas de jogos que o aluno adorava.' },
+  { cat: 'personalizacao', n: 47, color: '#7a1d6e', title: 'Material bilíngue ou traduzido',
+    prompt: 'Traduza e adapte culturalmente este material para aluno falante de [IDIOMA]: [COLE O MATERIAL]. A adaptação deve: manter o conteúdo pedagógico, usar exemplos que façam sentido para a cultura do aluno, ter glossário dos termos mais importantes em ambos os idiomas e instruções claras mesmo para quem tem pouco português.',
+    quando: 'Para incluir alunos imigrantes ou com pouco domínio do português sem excluí-los do processo de aprendizagem.',
+    exemplo: 'Escola com alunos venezuelanos usou para adaptar materiais de Matemática. Alunos conseguiram participar das aulas e as famílias entenderam as comunicações escolares.' },
+  { cat: 'personalizacao', n: 48, color: '#7a1d6e', title: 'Plano de apoio individualizado',
+    prompt: 'Crie um plano de apoio pedagógico para o aluno com o seguinte perfil: [DESCREVA: dificuldades, diagnóstico se houver, pontos fortes, contexto]. O plano deve ter: objetivo principal em 2 meses, 3 estratégias de intervenção em sala, sugestão de recursos, como envolver a família e indicadores de que o plano está funcionando.',
+    quando: 'Para formalizar o acompanhamento de alunos com necessidades específicas, especialmente para compartilhar com coordenação e família.',
+    exemplo: 'Professora criou plano para aluno com suspeita de dislalia. O documento estruturado ajudou a convencer os pais a buscar fonoaudiologia.' },
+  { cat: 'personalizacao', n: 49, color: '#7a1d6e', title: 'Atividade socioemocional',
+    prompt: 'Crie uma atividade socioemocional de 20 minutos para alunos do [ANO] sobre [TEMA: empatia, autorregulação, colaboração, identidade]. A atividade deve: ser adequada à faixa etária, ter conexão com o contexto escolar real dos alunos, incluir reflexão individual e compartilhamento em grupo e deixar o professor confortável para mediar.',
+    quando: 'Para trabalhar competências socioemocionais de forma intencional, sem precisar ser psicólogo.',
+    exemplo: 'Professora usou atividade sobre "como me sinto quando errei algo importante" após prova com resultado ruim. A roda de conversa transformou frustração em aprendizado emocional coletivo.' },
+  { cat: 'personalizacao', n: 50, color: '#7a1d6e', title: 'Roteiro de reunião com família',
+    prompt: 'Crie um roteiro para reunião individual com a família do aluno, com foco em [SITUAÇÃO]. O roteiro deve ter: abertura acolhedora, tópicos a abordar em ordem, como apresentar dados de forma compreensível, como ouvir a família e construir plano conjunto e encerramento com próximos passos claros. Duração prevista: 20 minutos.',
+    quando: 'Para se preparar para conversas difíceis com família e garantir que a reunião seja produtiva e respeitosa.',
+    exemplo: 'Professora usou roteiro para reunião com pai resistente. A estrutura de "primeiro escutar" que a IA sugeriu mudou completamente o tom — de conflito para parceria.' }
+];
+
+// Build prompt cards
+const catAccent = {
+  planejamento: '#0e5c8a',
+  avaliacao: '#1a6b52',
+  engajamento: '#8b5200',
+  personalizacao: '#7a1d6e'
+};
+const catBg = {
+  planejamento: '#f8fbff',
+  avaliacao: '#f5fbf8',
+  engajamento: '#fffbf3',
+  personalizacao: '#fdf5fc'
+};
+const catBorder = {
+  planejamento: '#c9dff0',
+  avaliacao: '#a8d9c8',
+  engajamento: '#f5cc89',
+  personalizacao: '#dda8d7'
+};
+
+function buildAll() {
+  prompts.forEach(p => {
+    const container = document.getElementById('list-' + p.cat);
+    if (!container) return;
+    const card = document.createElement('div');
+    card.className = 'prompt-card';
+    card.dataset.cat = p.cat;
+    card.dataset.title = p.title.toLowerCase();
+    card.dataset.prompt = p.prompt.toLowerCase();
+    card.dataset.quando = p.quando.toLowerCase();
+    card.innerHTML = `
+      <div class="prompt-header" onclick="toggleCard(this.parentElement)">
+        <div class="prompt-num" style="background:${p.color}">${p.n}</div>
+        <div class="prompt-title">${p.title}</div>
+        <div class="prompt-chevron">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text-box" style="background:${catBg[p.cat]};border-color:${catBorder[p.cat]};border-left-color:${p.color}">
+          <p>${p.prompt}</p>
+          <button class="copy-btn" onclick="copyPrompt(this, \`${p.prompt.replace(/`/g, '\\`')}\`)">Copiar</button>
+        </div>
+        <div class="meta-grid">
+          <div class="meta-block">
+            <div class="meta-label" style="color:${p.color}">⏰ Quando usar</div>
+            <div class="meta-text">${p.quando}</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label" style="color:${p.color}">🏫 Exemplo real</div>
+            <div class="meta-text">${p.exemplo}</div>
+          </div>
+        </div>
+      </div>`;
+    container.appendChild(card);
+  });
+}
+
+function toggleCard(card) {
+  const isOpen = card.classList.contains('open');
+  // close others in same container
+  const siblings = card.parentElement.querySelectorAll('.prompt-card.open');
+  siblings.forEach(s => { if (s !== card) s.classList.remove('open'); });
+  card.classList.toggle('open', !isOpen);
+  if (!isOpen) card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function copyPrompt(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ Copiado!';
+    btn.classList.add('copied');
+    showToast();
+    setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
+  }).catch(() => {
+    // fallback
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = '✓ Copiado!';
+    btn.classList.add('copied');
+    showToast();
+    setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+function showToast() {
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+// Search
+let currentFilter = 'all';
+const searchInput = document.getElementById('searchInput');
+const searchCount = document.getElementById('searchCount');
+
+searchInput.addEventListener('input', function() {
+  applyFilter();
+});
+
+function setFilter(filter, btn) {
+  currentFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.remove('active');
+    b.style.background = '';
+    b.style.color = '';
+    b.style.borderColor = '';
+  });
+  btn.classList.add('active');
+  const colors = { all: '#111827', planejamento: '#0e5c8a', avaliacao: '#1a6b52', engajamento: '#8b5200', personalizacao: '#7a1d6e' };
+  btn.style.background = colors[filter] || '#111827';
+  btn.style.color = '#fff';
+  btn.style.borderColor = 'transparent';
+  applyFilter();
+}
+
+function applyFilter() {
+  const q = searchInput.value.trim().toLowerCase();
+  let visible = 0;
+  const allCards = document.querySelectorAll('.prompt-card');
+  allCards.forEach(card => {
+    const catMatch = currentFilter === 'all' || card.dataset.cat === currentFilter;
+    const textMatch = !q || card.dataset.title.includes(q) || card.dataset.prompt.includes(q) || card.dataset.quando.includes(q);
+    const show = catMatch && textMatch;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+
+  // show/hide category sections
+  document.querySelectorAll('.category-section').forEach(sec => {
+    if (currentFilter !== 'all' && sec.dataset.cat !== currentFilter) {
+      sec.style.display = 'none';
+    } else {
+      sec.style.display = '';
+    }
+  });
+
+  searchCount.textContent = q ? `${visible} resultado${visible !== 1 ? 's' : ''}` : '';
+  document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+}
+
+buildAll();
+</script>
+</body>
+</html>
